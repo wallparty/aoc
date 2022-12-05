@@ -1,0 +1,72 @@
+[tool.poetry]
+name = "aoc_2022"
+version = "1.0.0"
+description = "Advent of Code 2022"
+authors = ["wallparty <dev@wallparty.horse>"]
+license = "MIT"
+packages = [
+    { include = "aoc_2022/*", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "~3.10"
+
+[tool.poetry.dev-dependencies]
+bandit = "^1.7.4"
+black = "^22.3.0"
+flake8 = "^4.0.1"
+isort = "^5.10.1"
+mypy = "^0.960"
+pydocstyle = "^6.1.1"
+pytest = "^7.1.2"
+toml = "^0.10.2"
+
+[tool.pydocstyle]
+convention = "numpy"
+add-ignore = "D10"
+
+[tool.black]
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+py_version = "auto"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.10"
+
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_decorators = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+no_implicit_reexport = true
+strict_equality = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unused_configs = true
+warn_unused_ignores = true
+
+warn_unreachable = true
+warn_no_return = true
+
+pretty = true
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = false
+warn_required_dynamic_aliases = true
+warn_untyped_fields = true
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests"
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
