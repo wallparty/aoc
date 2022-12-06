@@ -1,0 +1,11 @@
+[part_1.example]
+input = """A Y
+B X
+C Z"""
+output = 15
+
+[part_2.example]
+input = """A Y
+B X
+C Z"""
+output = 12

@@ -1,0 +1,7 @@
+[part_1.example]
+input = """$input"""
+output = $part_1_output
+
+[part_2.example]
+input = """$input"""
+output = $part_2_output
