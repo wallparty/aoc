@@ -3,7 +3,7 @@ from itertools import chain, repeat, starmap, tee
 from operator import itemgetter
 from typing import Iterator
 
-from aoc_2022.iterutils import call, call_method, consume, iter_len, ingest_while
+from aoc_2022.iterutils import call, call_method, consume, ingest_while, iter_len
 
 CRATE_LINE_PATTERN = re.compile(r"(\[[A-Z]\]|\s{3,3})\s?")
 CRATE_LETTER_PATTERN = re.compile(r"\[([A-Z])\]")
