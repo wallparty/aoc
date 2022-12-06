@@ -1,0 +1,39 @@
+[part_1.example1]
+input = """mjqjpqmgbljsphdztnvjfqwrcgsmlb"""
+output = 7
+
+[part_1.example2]
+input = """bvwbjplbgvbhsrlpgdmjqwftvncz"""
+output = 5
+
+[part_1.example3]
+input = """nppdvjthqldpwncqszvftbrmjlhg"""
+output = 6
+
+[part_1.example4]
+input = """nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg"""
+output = 10
+
+[part_1.example5]
+input = """zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw"""
+output = 11
+
+[part_2.example1]
+input = """mjqjpqmgbljsphdztnvjfqwrcgsmlb"""
+output = 19
+
+[part_2.example2]
+input = """bvwbjplbgvbhsrlpgdmjqwftvncz"""
+output = 23
+
+[part_2.example3]
+input = """nppdvjthqldpwncqszvftbrmjlhg"""
+output = 23
+
+[part_2.example4]
+input = """nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg"""
+output = 29
+
+[part_2.example5]
+input = """zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw"""
+output = 26

@@ -93,7 +93,7 @@ def call_method(method: Callable[..., T]) -> Callable[[S], T]:
     return methodcaller(method.__name__)
 
 
-def call(*args: Any, **kwargs: Any) -> Callable[..., T]:
+def call_with(*args: Any, **kwargs: Any) -> Callable[..., T]:
     """Prepare a call to a function with given arguments.
 
     Returns
