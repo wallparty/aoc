@@ -1,7 +1,7 @@
 from collections import deque
 from itertools import chain, islice, tee
 from operator import methodcaller
-from typing import Any, Callable, Iterator, TypeVar
+from typing import Any, Callable, Iterable, Iterator, TypeVar
 
 S = TypeVar("S")
 T = TypeVar("T")
@@ -126,3 +126,20 @@ def ingest_while(
             yield None
         else:
             break
+
+
+def transpose(iterator: Iterator[Iterable[T]]) -> Iterator[Iterable[T]]:
+    """Transpose an iterator of iterables.
+
+    For example, for an iterator i yielding [(1, "a"), (2, "b"), (3, "c")], the
+    transpose(i) will yield ([1, 2, 3], ["a", "b", "c"]).
+
+    Args
+    ----
+        iterator (Iterator[Iterator[T]]): the iterator to transpose.
+
+    Yields
+    ------
+        Iterator[Iterator[T]]: the transposed iterator.
+    """
+    return zip(*iterator)
