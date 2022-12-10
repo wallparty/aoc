@@ -42,6 +42,8 @@ def get_display(result: Any) -> str:
     if isinstance(result, int):
         return f"{result: 8}"
     elif isinstance(result, str):
+        if len(result) > 10:
+            return "\n" + result
         return result
     else:
         return str(result)
