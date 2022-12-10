@@ -1,6 +1,6 @@
-from itertools import starmap, tee, takewhile
-from operator import itemgetter, gt
 from functools import partial
+from itertools import starmap, takewhile, tee
+from operator import gt, itemgetter
 from typing import Iterator
 
 from .iterutils import call_with
