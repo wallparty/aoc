@@ -2,11 +2,13 @@ import importlib
 import shutil
 from argparse import ArgumentDefaultsHelpFormatter, ArgumentParser
 from pathlib import Path
+from string import Template
 from typing import Any
 
 from aoc_2022 import iterutils, utils
 
 ROOT_DIR = Path(__file__).parent
+TEST_DIR = ROOT_DIR.parent.parent.joinpath("tests")
 
 
 def make_parser() -> ArgumentParser:
@@ -77,13 +79,26 @@ def run(puzzle_id: int | None) -> None:
 
 
 def generate(puzzle_id: int) -> None:
-    template = ROOT_DIR.joinpath("day_XX.py")
-    new_file = template.with_stem(f"day_{puzzle_id:02}")
-    if new_file.exists():
-        print(new_file, "already exists, exiting...")
-        return
+    solution_template = ROOT_DIR.joinpath("day_XX.py")
+    new_solution = solution_template.with_stem(f"day_{puzzle_id:02}")
+    if new_solution.exists():
+        print(new_solution, "already exists, skipping...")
+    else:
+        shutil.copyfile(solution_template, new_solution)
 
-    shutil.copyfile(template, new_file)
+    test_template = TEST_DIR / "data" / "day_XX.toml.fmt"
+    new_test = test_template.with_name(f"day_{puzzle_id:02}.toml")
+    if new_test.exists():
+        print(new_test, "already exists, skipping...")
+    else:
+        with test_template.open(mode="r", encoding="utf-8") as f:
+            template = Template(f.read())
+
+        with new_test.open(mode="w", encoding="utf-8") as f:
+            content = template.substitute(
+                {"part_1_output": 0, "part_2_output": 0, "input": ""}
+            )
+            f.write(content)
 
 
 def main() -> int:
