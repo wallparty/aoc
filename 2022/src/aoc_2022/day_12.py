@@ -172,8 +172,8 @@ def part_2(data: Iterator[str]) -> int:
     _, end_node = find_start_and_end(nodes)
     start_nodes = filter(lambda x: x.height == 0, nodes)
 
-    possible_paths = map(
-        lambda x: A_star(x, end_node, end_node.distance_to), start_nodes
+    possible_paths = filter(
+        None, map(lambda x: A_star(x, end_node, end_node.distance_to), start_nodes)
     )
     return min(map(len, possible_paths)) - 1
 
