@@ -1,6 +1,7 @@
 from collections import deque
 from itertools import chain, islice, tee
-from operator import methodcaller
+from operator import methodcaller, getitem
+from functools import partial
 from typing import Any, Callable, Iterable, Iterator, TypeVar
 
 S = TypeVar("S")
@@ -42,7 +43,8 @@ def map_to_dict(d: dict[S, T], iterator: Iterator[S]) -> Iterator[T]:
     ------
         Iterator[T]: an iterator made of the dictionary's values.
     """
-    return filter(None, map(d.get, iterator))
+    from_d: partial[T] = partial(getitem, d)
+    return map(from_d, iterator)
 
 
 def consume(iterator: Iterator[T], n: int | None = None) -> None:

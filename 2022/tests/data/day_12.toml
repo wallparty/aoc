@@ -1,0 +1,15 @@
+[part_1.example]
+input = """Sabqponm
+abcryxxl
+accszExk
+acctuvwj
+abdefghi"""
+output = 31
+
+[part_2.example]
+input = """Sabqponm
+abcryxxl
+accszExk
+acctuvwj
+abdefghi"""
+output = 29
