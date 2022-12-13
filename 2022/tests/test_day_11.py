@@ -30,6 +30,10 @@ Monkey 3:
 """
 
 
+def relieve(level: int) -> int:
+    return level // 3
+
+
 def test_read_ops() -> None:
     monkeys = read_monkeys((i for i in INPUT.splitlines()))
 
@@ -42,7 +46,7 @@ def test_read_ops() -> None:
 def test_take_turn() -> None:
     monkeys = read_monkeys((i for i in INPUT.splitlines()))
 
-    take_turn(monkeys[0], monkeys, 3)
+    take_turn(relieve, monkeys[0], monkeys)
 
     assert monkeys[0].item_worry_levels == []
     assert monkeys[1].item_worry_levels == [54, 65, 75, 74]
@@ -53,7 +57,7 @@ def test_take_turn() -> None:
 def test_compute_round() -> None:
     monkeys = read_monkeys((i for i in INPUT.splitlines()))
 
-    compute_round(3, monkeys)
+    compute_round(relieve, monkeys)
 
     assert monkeys[0].item_worry_levels == [20, 23, 27, 26]
     assert monkeys[1].item_worry_levels == [2080, 25, 167, 207, 401, 1046]
