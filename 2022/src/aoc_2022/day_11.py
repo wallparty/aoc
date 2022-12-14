@@ -1,8 +1,8 @@
-from itertools import tee, takewhile, repeat
-from functools import partial, reduce
-from typing import Iterator, Callable, Optional, NamedTuple, Type, Any
-from operator import truth, add, mul, attrgetter
 import re
+from functools import partial, reduce
+from itertools import repeat, takewhile, tee
+from operator import add, attrgetter, mul, truth
+from typing import Any, Callable, Iterator, NamedTuple, Optional, Type
 
 from aoc_2022.iterutils import call_with, consume
 

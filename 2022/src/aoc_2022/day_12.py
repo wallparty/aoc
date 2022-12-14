@@ -1,10 +1,10 @@
-from itertools import tee, product, starmap
-from functools import partial
-from typing import Iterator, TypeVar, Callable
-from string import ascii_lowercase
 from collections import defaultdict
 from dataclasses import dataclass, field
+from functools import partial
+from itertools import product, starmap, tee
 from queue import PriorityQueue
+from string import ascii_lowercase
+from typing import Callable, Iterator, TypeVar
 
 from aoc_2022.iterutils import map_to_dict
 

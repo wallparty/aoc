@@ -1,4 +1,4 @@
-from aoc_2022.day_09 import RopePhysics, run_simulation, Coord
+from aoc_2022.day_09 import Coord, RopePhysics, run_simulation
 
 
 def test_long_movements() -> None:

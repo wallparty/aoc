@@ -1,7 +1,7 @@
 from collections import deque
-from itertools import chain, islice, tee
-from operator import methodcaller, getitem
 from functools import partial
+from itertools import chain, islice, tee
+from operator import getitem, methodcaller
 from typing import Any, Callable, Iterable, Iterator, TypeVar
 
 S = TypeVar("S")

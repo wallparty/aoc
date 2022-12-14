@@ -1,4 +1,4 @@
-from aoc_2022.day_11 import read_monkeys, take_turn, compute_round
+from aoc_2022.day_11 import compute_round, read_monkeys, take_turn
 
 INPUT = """Monkey 0:
   Starting items: 79, 98
